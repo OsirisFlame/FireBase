@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import java.net.URL?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.csc325_firebase_webview_auth.view.LoginController"
       alignment="CENTER" spacing="15"
-      style="-fx-background-color: #2c3e50; -fx-padding: 40;"
       prefWidth="400" prefHeight="500">
 
-    <Label text="Sign In"
-           style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
 
-    <TextField fx:id="emailField" promptText="Email"
-               prefWidth="300"/>
+    <Label text="Sign In" styleClass="title-label"/>
 
-    <PasswordField fx:id="passwordField" promptText="Password"
-                   prefWidth="300"/>
+    <TextField fx:id="emailField" promptText="Email" prefWidth="300"/>
 
-    <Button fx:id="loginBtn" text="Login"
-            prefWidth="300" onAction="#handleLogin"/>
+    <PasswordField fx:id="passwordField" promptText="Password" prefWidth="300"/>
 
-    <Label fx:id="messageLabel"
-           style="-fx-text-fill: red; -fx-font-size: 12px;"/>
+    <Button fx:id="loginBtn" text="Login" prefWidth="300" onAction="#handleLogin"/>
 
-    <Label text="Don't have an account?"
-           style="-fx-text-fill: #aaaaaa;"/>
+    <Label fx:id="messageLabel" styleClass="error-label"/>
 
-    <Button text="Register here"
-             onAction="#goToRegister"
-             prefWidth="300"/>
+    <Label text="Don't have an account?" styleClass="sub-label"/>
+
+    <Button text="Register here" onAction="#goToRegister" prefWidth="300"/>
 
 </VBox>
