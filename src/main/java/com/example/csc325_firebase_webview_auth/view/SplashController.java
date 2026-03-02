@@ -25,7 +25,7 @@ public class SplashController {
         pause.setOnFinished(event -> {
             try {
                 Parent root = FXMLLoader.load(
-                        getClass().getResource("/files/AccessFBView.fxml"));
+                        getClass().getResource("/files/Login.fxml"));
                 Stage stage = (Stage) progressBar.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();

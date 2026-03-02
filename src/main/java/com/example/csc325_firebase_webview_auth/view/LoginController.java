@@ -14,9 +14,12 @@ import javafx.stage.Stage;
 
 public class LoginController {
 
-    @FXML private TextField emailField;
-    @FXML private PasswordField passwordField;
-    @FXML private Label messageLabel;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private Label messageLabel;
 
     @FXML
     private void handleLogin() {
@@ -29,14 +32,31 @@ public class LoginController {
         }
 
         try {
-            // Verify user exists in Firebase Auth
-            UserRecord user = FirebaseAuth.getInstance()
-                    .getUserByEmail(email);
-            // If no exception, user exists — go to main screen
-            App.setRoot("/files/AccessFBView.fxml");
-        } catch (FirebaseAuthException e) {
-            messageLabel.setText("Invalid email or password.");
+            String apiKey = "AIzaSyCX13iUV5_ANc12j0pDn6R9rjBvZ20YgxM";
+            String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey;
+
+            java.net.http.HttpClient client = java.net.http.HttpClient.newHttpClient();
+            String body = "{\"email\":\"" + email + "\",\"password\":\"" + password + "\",\"returnSecureToken\":true}";
+
+            java.net.http.HttpRequest request = java.net.http.HttpRequest.newBuilder()
+                    .uri(java.net.URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .POST(java.net.http.HttpRequest.BodyPublishers.ofString(body))
+                    .build();
+
+            java.net.http.HttpResponse<String> response = client.send(request,
+                    java.net.http.HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                Parent root = FXMLLoader.load(getClass().getResource("/files/AccessFBView.fxml"));
+                Stage stage = (Stage) emailField.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } else {
+                messageLabel.setText("Invalid email or password.");
+            }
         } catch (Exception e) {
+            e.printStackTrace();
             messageLabel.setText("Login failed: " + e.getMessage());
         }
     }
@@ -44,9 +64,14 @@ public class LoginController {
     @FXML
     private void goToRegister() {
         try {
-            App.setRoot("/files/Register.fxml");
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("/files/Register.fxml"));
+            Stage stage = (Stage) emailField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
+            messageLabel.setText("Error: " + e.getMessage());
         }
     }
 }
