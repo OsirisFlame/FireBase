@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.csc325_firebase_webview_auth.view.LoginController"
+      alignment="CENTER" spacing="15"
+      prefWidth="400" prefHeight="500">
+
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
+    <Label text="Sign In" styleClass="title-label"/>
+
+    <TextField fx:id="emailField" promptText="Email" prefWidth="300"/>
+
+    <PasswordField fx:id="passwordField" promptText="Password" prefWidth="300"/>
+
+    <Button fx:id="loginBtn" text="Login" prefWidth="300" onAction="#handleLogin"/>
+
+    <Label fx:id="messageLabel" styleClass="error-label"/>
+
+    <Label text="Don't have an account?" styleClass="sub-label"/>
+
+    <Button text="Register here" onAction="#goToRegister" prefWidth="300"/>
+
+</VBox>
