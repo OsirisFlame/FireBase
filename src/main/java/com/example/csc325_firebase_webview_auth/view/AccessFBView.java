@@ -7,15 +7,19 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.UserRecord;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.io.File;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,6 +31,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 
 public class AccessFBView {
 
@@ -40,23 +48,49 @@ public class AccessFBView {
     @FXML private TableColumn<Person, String> nameColumn;
     @FXML private TableColumn<Person, String> majorColumn;
     @FXML private TableColumn<Person, Integer> ageColumn;
+    @FXML private ImageView profileImage;
 
     private boolean key;
     private ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
 
     @FXML
     void initialize() {
-        // Set up TableView columns
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         majorColumn.setCellValueFactory(new PropertyValueFactory<>("major"));
         ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         tableView.setItems(listOfUsers);
 
-        // Bind write button
         AccessDataViewModel accessDataViewModel = new AccessDataViewModel();
         nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
         majorField.textProperty().bindBidirectional(accessDataViewModel.userMajorProperty());
         writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
+    }
+
+    @FXML
+    private void uploadProfilePicture(MouseEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Profile Picture");
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
+        );
+
+        File file = fileChooser.showOpenDialog(profileImage.getScene().getWindow());
+        if (file != null) {
+            try {
+                // Show image in UI immediately
+                profileImage.setImage(new Image(file.toURI().toString()));
+
+                // Upload to Firebase Storage
+                Storage storage = StorageOptions.getDefaultInstance().getService();
+                BlobId blobId = BlobId.of("fir-852db.appspot.com", "profiles/" + file.getName());
+                BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+                storage.create(blobInfo, Files.readAllBytes(file.toPath()));
+
+                System.out.println("Upload successful: " + file.getName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
