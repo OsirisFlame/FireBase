@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package com.example.csc325_firebase_webview_auth.view;
 
 import javafx.beans.value.ChangeListener;
@@ -10,6 +6,7 @@ import javafx.concurrent.Worker.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -25,77 +22,83 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * FXML Controller class
- *
- * @author MoaathAlrajab
- *
- *
- *
- *
- */
 public class WebContainerController implements Initializable {
     Document doc;
-        private DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    private DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
-            private static String HTML_STRING2 = //
-            "<html>"//
-                    + "<head> " //
-                   + "  <script language='javascript'> " //
-                   + "     function changeBgColor()  { "//
-                   + "       var color= document.getElementById('ueberschr').value; "//
-                   + "       document.body.style.backgroundColor= color; " //
-                   + "     } " //
-                   + "  </script> "//
-                    + "  </script> "//
-                    + "</head> "//
-                    + "<body> "//
-                    + "   <h2>This is Html content</h2> <input id='ueberschr' value='yellow' />"//
-                    + "   <button onclick='app12.showTime();changeBgColor();'>Call To JavaFX</button> "//
-                    + "</body> "//
-                    + "</html> "//
-    ;
- private static String HTML_STRING = //
-           "<html>"//
-                   + "<head> " //
-                   + "  <script language='javascript'> " //
-                   + "     function changeBgColor()  { "//
-                   + "       var color= document.getElementById('color').value; "//
-                   + "       document.body.style.backgroundColor= color; " //
-                   + "     } " //
-                   + "  </script> "//
-                   + "</head> "//
-                   + "<body> "//
-                   + "   <h2>This is Html content</h2> "//
-                   + "   <b>Enter Color:</b> "//
-                   + "   <input id='color' value='yellow' /> "//
-                   + "   <button onclick='changeBgColor();'>Change Bg Color</button> "//
-                   + "</body> "//
-                   + "</html> "//
-   ;
- 
+    private static String HTML_STRING2 =
+            "<html><head><script language='javascript'>" +
+                    "function changeBgColor() {" +
+                    "var color = document.getElementById('ueberschr').value;" +
+                    "document.body.style.backgroundColor = color;" +
+                    "}" +
+                    "</script></head><body>" +
+                    "<h2>This is Html content</h2>" +
+                    "<input id='ueberschr' value='yellow' />" +
+                    "<button onclick='app12.showTime();changeBgColor();'>Call To JavaFX</button>" +
+                    "</body></html>";
+
+    private static String HTML_STRING =
+            "<html><head><script language='javascript'>" +
+                    "function changeBgColor() {" +
+                    "var color = document.getElementById('color').value;" +
+                    "document.body.style.backgroundColor = color;" +
+                    "}" +
+                    "</script></head><body>" +
+                    "<h2>This is Html content</h2>" +
+                    "<b>Enter Color:</b>" +
+                    "<input id='color' value='yellow' />" +
+                    "<button onclick='changeBgColor();'>Change Bg Color</button>" +
+                    "</body></html>";
+
     @FXML
     Label label;
-    
-    
-    
+
     @FXML
     WebView webView;
     private WebEngine webEngine;
 
     @FXML
+    private void handleClose(ActionEvent e) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    private void handleDelete(ActionEvent e) {
+        label.setText("Deleted.");
+        webEngine.loadContent("<html><body><h2>Content cleared.</h2></body></html>");
+    }
+
+    @FXML
+    private void handleAbout(ActionEvent e) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("CSC325 Firebase App");
+        alert.setContentText("Built with JavaFX + Firebase\nAuthor: Your Name");
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void handleLogout(ActionEvent e) {
+        try {
+            App.setRoot("/files/Login.fxml");
+        } catch (IOException ex) {
+            Logger.getLogger(WebContainerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
     private void goAction(ActionEvent evt) {
         webEngine.load("http://google.com");
     }
-    @FXML
-    private void setLabel(ActionEvent e){
-                            System.out.println("H1");
 
+    @FXML
+    private void setLabel(ActionEvent e) {
         doc.getElementById("ueberschr").setAttribute("value", "Red");
     }
-    
+
     @FXML
-    private void swithcBackStage(ActionEvent e){
+    private void swithcBackStage(ActionEvent e) {
         try {
             App.setRoot("/files/AccessFBView.fxml");
         } catch (IOException ex) {
@@ -105,48 +108,29 @@ public class WebContainerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         try {
             webEngine = webView.getEngine();
-                      //  webView.setContextMenuEnabled(false);
             webEngine.loadContent(HTML_STRING2);
-
             webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<State>() {
                 @Override
                 public void changed(ObservableValue<? extends State> ov, State t, State newState) {
-                     if (newState == State.SUCCEEDED) {
-                         doc = webEngine.getDocument();
-                    // Get window object of page.
-                    JSObject jsobj = (JSObject) webEngine.executeScript("window");
-                                        System.out.println("H2");
-
-
-                    // Set member for 'window' object.
-                    // In Javascript access: window.myJavaMember....
-                    jsobj.setMember("app12", new Bridge());
-                }
+                    if (newState == State.SUCCEEDED) {
+                        doc = webEngine.getDocument();
+                        JSObject jsobj = (JSObject) webEngine.executeScript("window");
+                        jsobj.setMember("app12", new Bridge());
+                    }
                 }
             });
             webView.setContextMenuEnabled(false);
-            //txtURL.setText("http://www.google.com");
-            // webEngine.load("http://www.google.com");
             webEngine.setJavaScriptEnabled(true);
-            //webEngine.load(
-                    // this.getClass().getResource("newhtml.html").toExternalForm()
-            //        "file://Users/MoaathAlrajab/Documents/demo265/MVVMExample/src/main/resources/com/mycompany/mvvmexample/newhtml.html"
-            //);
         } catch (Exception ex) {
             Logger.getLogger(WebContainerController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-        public class Bridge {
 
+    public class Bridge {
         public void showTime() {
-            System.out.println("Show Time");
-
             label.setText("Now is: " + df.format(new Date()));
         }
     }
 }
-

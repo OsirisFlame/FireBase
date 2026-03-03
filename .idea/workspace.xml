@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Fix login with Firebase REST API and module dependencies">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/styles.css" afterDir="false" />
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Add styles.css and link to Login, Register, and SplashScreen FXML files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/SplashScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/WebContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/WebContainer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/files/WebContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/WebContainer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/WebContainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/WebContainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772427352103</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add styles.css and link to Login, Register, and SplashScreen FXML files">
+      <option name="closed" value="true" />
+      <created>1772495970652</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772495970652</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +232,8 @@
     <MESSAGE value="Add splash screen and Key" />
     <MESSAGE value="Add login and register screens" />
     <MESSAGE value="Fix login with Firebase REST API and module dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix login with Firebase REST API and module dependencies" />
+    <MESSAGE value="Add styles.css and link to Login, Register, and SplashScreen FXML files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add styles.css and link to Login, Register, and SplashScreen FXML files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
