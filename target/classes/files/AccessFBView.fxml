@@ -17,7 +17,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView">
+
+
+<AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView" stylesheets="@styles.css">
     <children>
         <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="894.0">
             <menus>
@@ -43,7 +45,7 @@
             <children>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                     <children>
-                        <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="129.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#uploadProfilePicture">
+                        <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="129.0" layoutX="17.0" layoutY="14.0" onMouseClicked="#uploadProfilePicture" pickOnBounds="true" preserveRatio="true">
                             <effect>
                                 <InnerShadow>
                                     <color>
@@ -62,9 +64,9 @@
                         <TextArea fx:id="outputField" prefHeight="184.0" prefWidth="514.0" />
                         <TableView fx:id="tableView" prefHeight="351.0" prefWidth="514.0">
                             <columns>
-                                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name" />
-                                <TableColumn fx:id="majorColumn" prefWidth="150.0" text="Major" />
-                                <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
+                                <TableColumn fx:id="nameColumn" prefWidth="172.0" text="Name" />
+                                <TableColumn fx:id="majorColumn" prefWidth="158.0" text="Major" />
+                                <TableColumn fx:id="ageColumn" prefWidth="182.0" text="Age" />
                             </columns>
                         </TableView>
                     </children>
