@@ -32,7 +32,7 @@ public class LoginController {
         }
 
         try {
-            String apiKey = "AIzaSyCX13iUV5_ANc12j0pDn6R9rjBvZ20YgxM";
+            String apiKey = "AIzaSyDEm8iMp3rAiMY4gUatjR5niws0UsXOCyU";
             String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey;
 
             java.net.http.HttpClient client = java.net.http.HttpClient.newHttpClient();
@@ -46,6 +46,8 @@ public class LoginController {
 
             java.net.http.HttpResponse<String> response = client.send(request,
                     java.net.http.HttpResponse.BodyHandlers.ofString());
+
+            System.out.println(response.body());   // ADD THIS LINE
 
             if (response.statusCode() == 200) {
                 Parent root = FXMLLoader.load(getClass().getResource("/files/AccessFBView.fxml"));
