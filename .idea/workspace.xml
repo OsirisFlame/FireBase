@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic">
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Implement button functionality for Write, Read, Delete, and Switch actions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/model/FirestoreContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/model/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/AccessFBView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/SplashController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController$Bridge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/viewmodel/AccessDataViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/Register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/SplashScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/WebContainer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/newhtml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/profile_empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +100,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/viewmodel" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\16312\IdeaProjects\FireBase1" />
       <recent name="C:\Users\16312\IdeaProjects\FireBase1\src\main\resources\files" />
       <recent name="C:\Users\16312\IdeaProjects\CSC325_Firebase_webview_Auth_StarterCode\src\main\resources\files" />
       <recent name="$PROJECT_DIR$/src/main/resources/files" />
@@ -242,7 +261,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773422587880</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implement button functionality for Write, Read, Delete, and Switch actions">
+      <option name="closed" value="true" />
+      <created>1773453924351</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773453924351</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implement button functionality for Write, Read, Delete, and Switch actions">
+      <option name="closed" value="true" />
+      <created>1773454679990</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773454679990</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +296,8 @@
     <MESSAGE value="Add styles.css and link to Login, Register, and SplashScreen FXML files" />
     <MESSAGE value="Implement TableView with Firestore data and wire up menu items" />
     <MESSAGE value="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic" />
+    <MESSAGE value="Implement button functionality for Write, Read, Delete, and Switch actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement button functionality for Write, Read, Delete, and Switch actions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
