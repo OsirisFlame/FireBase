@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Remove target build folder and Firebase key from repository">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Finalize Firebase JavaFX app and configure gitignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,8 +77,8 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/viewmodel" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\16312\IdeaProjects\FireBase1" />
       <recent name="C:\Users\16312\IdeaProjects\FireBase1\src\main\resources\files" />
+      <recent name="C:\Users\16312\IdeaProjects\FireBase1" />
       <recent name="C:\Users\16312\IdeaProjects\CSC325_Firebase_webview_Auth_StarterCode\src\main\resources\files" />
       <recent name="$PROJECT_DIR$/src/main/resources/files" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -265,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773455160806</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finalize Firebase JavaFX app and configure gitignore">
+      <option name="closed" value="true" />
+      <created>1773456019677</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773456019677</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +291,8 @@
     <MESSAGE value="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic" />
     <MESSAGE value="Implement button functionality for Write, Read, Delete, and Switch actions" />
     <MESSAGE value="Remove target build folder and Firebase key from repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove target build folder and Firebase key from repository" />
+    <MESSAGE value="Finalize Firebase JavaFX app and configure gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalize Firebase JavaFX app and configure gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
