@@ -17,9 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-
-
-<AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView" stylesheets="@styles.css">
+<AnchorPane prefHeight="571.0" prefWidth="894.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView">
     <children>
         <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="894.0">
             <menus>
@@ -77,20 +75,13 @@
                         <TextField fx:id="majorField" promptText="Major" />
                         <TextField fx:id="ageField" promptText="Age" />
                         <HBox prefHeight="32.0" prefWidth="465.0">
-                            <children>
-                                <Button fx:id="readButton" mnemonicParsing="false" onAction="#readRecord" prefHeight="25.0" prefWidth="123.0" text="Read">
-                                    <HBox.margin>
-                                        <Insets left="20.0" right="20.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button fx:id="writeButton" mnemonicParsing="false" onAction="#addRecord" prefHeight="25.0" prefWidth="128.0" text="Write">
-                                    <HBox.margin>
-                                        <Insets left="20.0" right="20.0" />
-                                    </HBox.margin>
-                                </Button>
-                            </children>
+                     <children>
+                                <Button fx:id="writeButton" mnemonicParsing="false" onAction="#addRecord" prefHeight="25.0" prefWidth="283.0" text="Write" />
+                     </children>
                         </HBox>
+                  <Button mnemonicParsing="false" onAction="#deleteRecord" prefHeight="25.0" prefWidth="283.0" text="Delete" />
                         <Button fx:id="switchroot" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="25.0" prefWidth="283.0" text="Switch" />
+                          <Button fx:id="readButton" mnemonicParsing="false" onAction="#readRecord" prefHeight="25.0" prefWidth="283.0" text="Read" />
                     </children>
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

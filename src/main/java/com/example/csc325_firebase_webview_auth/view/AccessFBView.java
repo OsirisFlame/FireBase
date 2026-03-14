@@ -139,4 +139,43 @@ public class AccessFBView {
         }
         return key;
     }
-}
+    @FXML
+    private void deleteRecord(ActionEvent event) {
+
+        Person selected = tableView.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            System.out.println("No row selected");
+            return;
+        }
+
+        try {
+
+            ApiFuture<QuerySnapshot> future =
+                    App.fstore.collection("References").get();
+
+            List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+
+            for (QueryDocumentSnapshot doc : documents) {
+
+                if (doc.getString("Name").equals(selected.getName())) {
+
+                    App.fstore.collection("References")
+                            .document(doc.getId())
+                            .delete();
+
+                    System.out.println("Deleted: " + doc.getId());
+                }
+            }
+
+            listOfUsers.remove(selected);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
+
+
+

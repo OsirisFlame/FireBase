@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Implement TableView with Firestore data and wire up menu items">
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772500417656</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic">
+      <option name="closed" value="true" />
+      <created>1773422587880</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773422587880</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +260,8 @@
     <MESSAGE value="Fix login with Firebase REST API and module dependencies" />
     <MESSAGE value="Add styles.css and link to Login, Register, and SplashScreen FXML files" />
     <MESSAGE value="Implement TableView with Firestore data and wire up menu items" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement TableView with Firestore data and wire up menu items" />
+    <MESSAGE value="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redesign AccessFBView UI, add dark theme styling, enable table functionality, and update controller logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
