@@ -1,1 +1,9 @@
+# Firebase key
 src/main/resources/files/key.json
+
+# IntelliJ files
+.idea/
+*.iml
+
+# Build files
+target/
